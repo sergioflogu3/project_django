@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Facultades
+{% endblock %}
+
+{% block content %}
+
+    <h2>Lista de las Facultades</h2>
+    <a href="{% url 'create_full_faculty' %}" >Crear</a>
+    <hr>
+    <table border="1">
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Acción</th>
+        </tr>
+        {%for faculty in faculties%}
+            <tr>
+                <td>{{ faculty.id }}</td>
+                <td>{{ faculty.name }}</td>
+                <td>{{ faculty.description }}</td>
+                <td>
+                    <a href="{% url 'delete_faculty' faculty.id %}">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

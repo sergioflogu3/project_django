@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+
+        {% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<header>
+    <div id="logotipo">
+        <img src="{% static 'img/logo.png' %}">
+        <h1>Partes de Asistencia</h1>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li>
+            <a href="/inicio">Inicio</a>
+        </li>
+        <li>
+            <a href="/faculties">Facultad</a>
+        </li>
+        <li>
+            <a href="/pagina-pruebas">Pruebas</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="barra">
+    <span class="esquina-izquierda"></span>
+    <span class="rellena-barra"></span>
+    <span class="esquina-derecha"></span>
+</div>
+
+<div id="content">
+
+    <div class="box">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</div>
+
+<footer>
+    Derechos Reservados &copy;
+</footer>
+</body>
+</html>

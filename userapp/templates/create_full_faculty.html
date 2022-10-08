@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Crear Full Facultad
+{% endblock %}
+
+{% block content %}
+    <h2>Crear Facultad</h2>
+    <hr>
+    {% if form.errors %}
+        <strong class="red">Hay errrores en el Formulario</strong>
+    {% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Guardar">
+    </form>
+{% endblock %}
